@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootstrap Studio 8.0.0 - A User Protest</title>
+  <meta name="description" content="A user protest regarding Bootstrap Studio 8.0.0, downgrade issues, AI control, broken workflow, and the lack of communication from the team." />
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg-main: #0b0f17;
+      --bg-card: rgba(18, 24, 38, 0.92);
+      --bg-soft: rgba(255, 255, 255, 0.04);
+      --text-main: #f5f7fb;
+      --text-muted: #b8c2d1;
+      --accent: #dc3545;
+      --accent-soft: rgba(220, 53, 69, 0.12);
+      --border-soft: rgba(255, 255, 255, 0.08);
+      --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(220, 53, 69, 0.16), transparent 26%),
+        radial-gradient(circle at bottom right, rgba(13, 110, 253, 0.10), transparent 25%),
+        linear-gradient(180deg, #070b12 0%, #0b0f17 100%);
+      color: var(--text-main);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .hero {
+      padding: 90px 0 40px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(220, 53, 69, 0.35);
+      color: #ffc7ce;
+      font-size: 0.88rem;
+      letter-spacing: 0.4px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      line-height: 1.08;
+      font-weight: 800;
+      margin-top: 18px;
+      margin-bottom: 18px;
+      max-width: 980px;
+    }
+
+    .hero-subtitle {
+      max-width: 900px;
+      color: var(--text-muted);
+      font-size: 1.08rem;
+      line-height: 1.8;
+    }
+
+    .main-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(10px);
+    }
+
+    .section-title {
+      font-size: 1.65rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .lead-text,
+    .body-text {
+      color: var(--text-muted);
+      line-height: 1.9;
+      font-size: 1.02rem;
+    }
+
+    .quote-box {
+      background: rgba(220, 53, 69, 0.08);
+      border: 1px solid rgba(220, 53, 69, 0.20);
+      border-left: 4px solid var(--accent);
+      border-radius: 18px;
+      padding: 24px;
+      color: #ffd6db;
+    }
+
+    .mini-card {
+      height: 100%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border: 1px solid var(--border-soft);
+      border-radius: 18px;
+      padding: 24px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .mini-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(220, 53, 69, 0.30);
+    }
+
+    .mini-number {
+      width: 46px;
+      height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      border: 1px solid rgba(220, 53, 69, 0.25);
+      color: #ffcbd1;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent);
+      margin: 28px 0;
+    }
+
+    .list-box {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border-soft);
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .list-box ul {
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+
+    .list-box li {
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      line-height: 1.8;
+    }
+
+    .signature {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-soft);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .footer-note {
+      color: #93a1b5;
+      font-size: 0.95rem;
+    }
+
+    .btn-custom-danger {
+      background: var(--accent);
+      border: none;
+      padding: 12px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+
+    .btn-custom-outline {
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+      background: transparent;
+    }
+
+    .btn-custom-outline:hover {
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 65px 0 30px;
+      }
+
+      .main-card {
+        border-radius: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container py-5">
+    <section class="hero">
+      <div class="row justify-content-center">
+        <div class="col-lg-11 text-center">
+          <span class="hero-badge">Open Protest • Bootstrap Studio Community Feedback</span>
+          <h1 class="hero-title mx-auto">
+            Bootstrap Studio 8.0.0 Feels Like a Step Back, Not a Step Forward
+          </h1>
+          <p class="hero-subtitle mx-auto">
+            This is not written out of hate. It is written out of frustration. Many of us use Bootstrap Studio because we want control over our work, our code, our design, and our workflow. Version 8.0.0 has made that control feel weaker, slower, and more unstable than before.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Elfsight Poll | Boootstrap Studio -->
+
+<div class="elfsight-app-c84a8887-6fba-478b-b2a3-4f013becfbe3" data-elfsight-app-lazy></div>
+
+    <section class="main-card p-4 p-lg-5 mb-4">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-8">
+          <h2 class="section-title">A personal and honest experience</h2>
+
+          <p class="body-text">
+            I had to format my computer just to get back to the version I actually wanted, which was 7.1.2. That version felt solid, clean, and reliable. To me, it worked the way a serious design tool should work. It respected the user. It respected the workflow. It gave me confidence.
+          </p>
+
+          <p class="body-text">
+            Now with version 8.0.0, things feel very different. If I wanted artificial intelligence to build websites for me without precision, without discipline, and without respecting the structure I created, then I would be better off using Canva, Base44, Wix eCommerce, or any other platform built around that kind of experience.
+          </p>
+
+          <p class="body-text">
+            But that is not why many of us use Bootstrap Studio. We use Bootstrap Studio because we want to build with intention. We want to understand the software. We want to understand Bootstrap. We want control over the layout, the CSS, the JavaScript, and the final result.
+          </p>
+
+          <div class="quote-box mt-4">
+            <div class="fw-bold mb-2">The biggest problem is not only that the AI is slow.</div>
+            <div>
+              The real problem is that from the moment you run a query, it feels like you lose control of the project. It can alter CSS, alter JavaScript, change the structure, and damage the entire design direction you were building carefully.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="list-box">
+            <h3 class="h5 mb-3">What this version is causing</h3>
+            <ul>
+              <li>Slower design flow</li>
+              <li>Reduced confidence in AI-assisted changes</li>
+              <li>Unexpected modifications to CSS and JavaScript</li>
+              <li>Loss of creative and technical control</li>
+              <li>Project compatibility problems after downgrade</li>
+              <li>No clear communication about the next update</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2 class="section-title">The downgrade problem is unacceptable</h2>
+
+      <p class="body-text">
+        I made changes to my website in the new version, added new widgets, and continued working under the assumption that I would still have a path back if the new experience failed. But after downgrading, I discovered that I could no longer open the .bss file because those edits had been made in the newer version.
+      </p>
+
+      <p class="body-text">
+        So now the question is simple: how are we supposed to solve this? Users should not have to choose between unstable new features and access to their own work. A creative tool should not lock people into a broken workflow.
+      </p>
+
+      <p class="body-text mb-0">
+        That is not innovation. That is disruption without protection.
+      </p>
+    </section>
+
+    <section class="main-card p-4 p-lg-5 mb-4">
+      <h2 class="section-title">Why the forum is still active</h2>
+
+      <div class="row g-4 mt-1">
+        <div class="col-md-6 col-xl-3">
+          <div class="mini-card">
+            <div class="mini-number">1</div>
+            <h3 class="h5">People want control</h3>
+            <p class="body-text mb-0">
+              Bootstrap users are not looking for a tool that takes over everything. They want a tool that helps them build while keeping their decisions intact.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="mini-card">
+            <div class="mini-number">2</div>
+            <h3 class="h5">People want to learn</h3>
+            <p class="body-text mb-0">
+              The community is active because there are real users who care about understanding the software, the framework, and the way things are built.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="mini-card">
+            <div class="mini-number">3</div>
+            <h3 class="h5">People value precision</h3>
+            <p class="body-text mb-0">
+              Many users choose Bootstrap Studio precisely because it has historically provided structure, speed, visual clarity, and control.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="mini-card">
+            <div class="mini-number">4</div>
+            <h3 class="h5">People expect respect</h3>
+            <p class="body-text mb-0">
+              When a version creates serious problems, users deserve an honest explanation, a public update, and a clear path forward.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2 class="section-title">Version 7 felt revolutionary. Version 8 feels backwards.</h2>
+
+      <p class="body-text">
+        I honestly thought that after the previous version, the team had created something truly historic. For the first time, it felt like they had created AI inside software in a way that was actually useful because the user still had control over it. That was the magic. The intelligence served the designer, not the other way around.
+      </p>
+
+      <p class="body-text">
+        But version 8.0.0 does not feel like an evolution of that idea. It feels like the opposite. It feels like the AI now wants to take the wheel, rewrite what it wants, and leave the user cleaning up the damage. It almost feels like version 8 is the revenge of the AI for what users were able to control in version 7.1.
+      </p>
+
+      <p class="body-text mb-0">
+        That may sound dramatic, but that is exactly how it feels when your design stops being yours the moment you ask for assistance.
+      </p>
+    </section>
+
+    <section class="main-card p-4 p-lg-5 mb-4">
+      <h2 class="section-title">What the Bootstrap Studio team needs to address</h2>
+
+      <div class="row g-4 mt-1">
+        <div class="col-md-6">
+          <div class="mini-card">
+            <h3 class="h5">File compatibility</h3>
+            <p class="body-text mb-0">
+              Users need a real answer regarding .bss project compatibility when moving between versions, especially when a downgrade becomes necessary for stability.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="mini-card">
+            <h3 class="h5">AI behavior and project safety</h3>
+            <p class="body-text mb-0">
+              AI features should never put the integrity of a design at risk by unexpectedly rewriting CSS, JavaScript, or core project structure.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="mini-card">
+            <h3 class="h5">Performance and responsiveness</h3>
+            <p class="body-text mb-0">
+              If the AI is going to be part of the workflow, it cannot be so slow and unpredictable that using it becomes unhealthy for serious production work.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="mini-card">
+            <h3 class="h5">Communication</h3>
+            <p class="body-text mb-0">
+              The silence around these issues is making everything worse. Users deserve to know when the next update is coming and what exactly is being fixed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="main-card p-4 p-lg-5 mb-4">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-8">
+          <h2 class="section-title">Final statement</h2>
+
+          <p class="body-text">
+            This protest is not against innovation. It is against losing control in the name of innovation. The reason many people still care enough to post in the forum is because Bootstrap Studio matters to them. They do not want it to become just another platform where automation overrides craftsmanship.
+          </p>
+
+          <p class="body-text">
+            If users wanted random AI-generated design decisions, they would already be using other platforms. The value of Bootstrap Studio has always been that it gave people power, speed, understanding, and structure. That identity should not be thrown away.
+          </p>
+
+          <p class="body-text mb-0">
+            Please address the problems in version 8.0.0. Please give users a clear update. Please restore the sense of control that made this software great.
+          </p>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="signature">
+            <div class="small text-uppercase text-secondary mb-2">Signed</div>
+            <div class="fs-5 fw-bold">A frustrated but loyal Bootstrap Studio user</div>
+            <div class="footer-note mt-2">
+              Speaking for users who want stability, transparency, and real control over what they build.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+     <!-- 
+ <div class="d-flex flex-column flex-sm-row gap-3">
+        <button class="btn btn-custom-danger">Publish This Statement</button>
+        <button class="btn btn-custom-outline">Send It to the Forum</button>
+      </div>
+ -->
+    </section>
+
+    <footer class="text-center py-3">
+      <p class="footer-note mb-0">
+        Constructive criticism from a user who still believes Bootstrap Studio can do better.
+      </p>
+    </footer>
+  </main>
+  <script src="https://elfsightcdn.com/platform.js" async></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
